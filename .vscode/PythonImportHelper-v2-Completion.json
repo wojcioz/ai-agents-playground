@@ -1,0 +1,270 @@
+[
+    {
+        "label": "datetime",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "getpass",
+        "importPath": "getpass",
+        "description": "getpass",
+        "isExtraImport": true,
+        "detail": "getpass",
+        "documentation": {}
+    },
+    {
+        "label": "OptionParser",
+        "importPath": "optparse",
+        "description": "optparse",
+        "isExtraImport": true,
+        "detail": "optparse",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "peewee",
+        "description": "peewee",
+        "isExtraImport": true,
+        "detail": "peewee",
+        "documentation": {}
+    },
+    {
+        "label": "print_",
+        "importPath": "peewee",
+        "description": "peewee",
+        "isExtraImport": true,
+        "detail": "peewee",
+        "documentation": {}
+    },
+    {
+        "label": "__version__",
+        "importPath": "peewee",
+        "description": "peewee",
+        "isExtraImport": true,
+        "detail": "peewee",
+        "documentation": {}
+    },
+    {
+        "label": "CockroachDatabase",
+        "importPath": "playhouse.cockroachdb",
+        "description": "playhouse.cockroachdb",
+        "isExtraImport": true,
+        "detail": "playhouse.cockroachdb",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "playhouse.reflection",
+        "description": "playhouse.reflection",
+        "isExtraImport": true,
+        "detail": "playhouse.reflection",
+        "documentation": {}
+    },
+    {
+        "label": "Agent",
+        "importPath": "phi.agent",
+        "description": "phi.agent",
+        "isExtraImport": true,
+        "detail": "phi.agent",
+        "documentation": {}
+    },
+    {
+        "label": "Groq",
+        "importPath": "phi.model.groq",
+        "description": "phi.model.groq",
+        "isExtraImport": true,
+        "detail": "phi.model.groq",
+        "documentation": {}
+    },
+    {
+        "label": "YFinanceTools",
+        "importPath": "phi.tools.yfinance",
+        "description": "phi.tools.yfinance",
+        "isExtraImport": true,
+        "detail": "phi.tools.yfinance",
+        "documentation": {}
+    },
+    {
+        "label": "DuckDuckGo",
+        "importPath": "phi.tools.duckduckgo",
+        "description": "phi.tools.duckduckgo",
+        "isExtraImport": true,
+        "detail": "phi.tools.duckduckgo",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "kind": 6,
+        "importPath": "venv.Scripts.pwiz",
+        "description": "venv.Scripts.pwiz",
+        "peekOfCode": "class BaseModel(Model):\n    class Meta:\n        database = database\n\"\"\"\nUNKNOWN_FIELD = \"\"\"\\\nclass UnknownField(object):\n    def __init__(self, *_, **__): pass\n\"\"\"\nDATABASE_ALIASES = {\n    CockroachDatabase: ['cockroach', 'cockroachdb', 'crdb'],",
+        "detail": "venv.Scripts.pwiz",
+        "documentation": {}
+    },
+    {
+        "label": "UnknownField",
+        "kind": 6,
+        "importPath": "venv.Scripts.pwiz",
+        "description": "venv.Scripts.pwiz",
+        "peekOfCode": "class UnknownField(object):\n    def __init__(self, *_, **__): pass\n\"\"\"\nDATABASE_ALIASES = {\n    CockroachDatabase: ['cockroach', 'cockroachdb', 'crdb'],\n    MySQLDatabase: ['mysql', 'mysqldb'],\n    PostgresqlDatabase: ['postgres', 'postgresql'],\n    SqliteDatabase: ['sqlite', 'sqlite3'],\n}\nDATABASE_MAP = dict((value, key)",
+        "detail": "venv.Scripts.pwiz",
+        "documentation": {}
+    },
+    {
+        "label": "make_introspector",
+        "kind": 2,
+        "importPath": "venv.Scripts.pwiz",
+        "description": "venv.Scripts.pwiz",
+        "peekOfCode": "def make_introspector(database_type, database_name, **kwargs):\n    if database_type not in DATABASE_MAP:\n        err('Unrecognized database, must be one of: %s' %\n            ', '.join(DATABASE_MAP.keys()))\n        sys.exit(1)\n    schema = kwargs.pop('schema', None)\n    DatabaseClass = DATABASE_MAP[database_type]\n    db = DatabaseClass(database_name, **kwargs)\n    return Introspector.from_database(db, schema=schema)\ndef print_models(introspector, tables=None, preserve_order=False,",
+        "detail": "venv.Scripts.pwiz",
+        "documentation": {}
+    },
+    {
+        "label": "print_models",
+        "kind": 2,
+        "importPath": "venv.Scripts.pwiz",
+        "description": "venv.Scripts.pwiz",
+        "peekOfCode": "def print_models(introspector, tables=None, preserve_order=False,\n                 include_views=False, ignore_unknown=False, snake_case=True):\n    database = introspector.introspect(table_names=tables,\n                                       include_views=include_views,\n                                       snake_case=snake_case)\n    db_kwargs = introspector.get_database_kwargs()\n    header = HEADER % (\n        introspector.get_additional_imports(),\n        introspector.get_database_class().__name__,\n        introspector.get_database_name(),",
+        "detail": "venv.Scripts.pwiz",
+        "documentation": {}
+    },
+    {
+        "label": "print_header",
+        "kind": 2,
+        "importPath": "venv.Scripts.pwiz",
+        "description": "venv.Scripts.pwiz",
+        "peekOfCode": "def print_header(cmd_line, introspector):\n    timestamp = datetime.datetime.now()\n    print_('# Code generated by:')\n    print_('# python -m pwiz %s' % cmd_line)\n    print_('# Date: %s' % timestamp.strftime('%B %d, %Y %I:%M%p'))\n    print_('# Database: %s' % introspector.get_database_name())\n    print_('# Peewee version: %s' % peewee_version)\n    print_('')\ndef err(msg):\n    sys.stderr.write('\\033[91m%s\\033[0m\\n' % msg)",
+        "detail": "venv.Scripts.pwiz",
+        "documentation": {}
+    },
+    {
+        "label": "err",
+        "kind": 2,
+        "importPath": "venv.Scripts.pwiz",
+        "description": "venv.Scripts.pwiz",
+        "peekOfCode": "def err(msg):\n    sys.stderr.write('\\033[91m%s\\033[0m\\n' % msg)\n    sys.stderr.flush()\ndef get_option_parser():\n    parser = OptionParser(usage='usage: %prog [options] database_name')\n    ao = parser.add_option\n    ao('-H', '--host', dest='host')\n    ao('-p', '--port', dest='port', type='int')\n    ao('-u', '--user', dest='user')\n    ao('-P', '--password', dest='password', action='store_true')",
+        "detail": "venv.Scripts.pwiz",
+        "documentation": {}
+    },
+    {
+        "label": "get_option_parser",
+        "kind": 2,
+        "importPath": "venv.Scripts.pwiz",
+        "description": "venv.Scripts.pwiz",
+        "peekOfCode": "def get_option_parser():\n    parser = OptionParser(usage='usage: %prog [options] database_name')\n    ao = parser.add_option\n    ao('-H', '--host', dest='host')\n    ao('-p', '--port', dest='port', type='int')\n    ao('-u', '--user', dest='user')\n    ao('-P', '--password', dest='password', action='store_true')\n    engines = sorted(DATABASE_MAP)\n    ao('-e', '--engine', dest='engine', choices=engines,\n       help=('Database type, e.g. sqlite, mysql, postgresql or cockroachdb. '",
+        "detail": "venv.Scripts.pwiz",
+        "documentation": {}
+    },
+    {
+        "label": "get_connect_kwargs",
+        "kind": 2,
+        "importPath": "venv.Scripts.pwiz",
+        "description": "venv.Scripts.pwiz",
+        "peekOfCode": "def get_connect_kwargs(options):\n    ops = ('host', 'port', 'user', 'schema')\n    kwargs = dict((o, getattr(options, o)) for o in ops if getattr(options, o))\n    if options.password:\n        kwargs['password'] = getpass()\n    return kwargs\nif __name__ == '__main__':\n    raw_argv = sys.argv\n    parser = get_option_parser()\n    options, args = parser.parse_args()",
+        "detail": "venv.Scripts.pwiz",
+        "documentation": {}
+    },
+    {
+        "label": "HEADER",
+        "kind": 5,
+        "importPath": "venv.Scripts.pwiz",
+        "description": "venv.Scripts.pwiz",
+        "peekOfCode": "HEADER = \"\"\"from peewee import *%s\ndatabase = %s('%s'%s)\n\"\"\"\nBASE_MODEL = \"\"\"\\\nclass BaseModel(Model):\n    class Meta:\n        database = database\n\"\"\"\nUNKNOWN_FIELD = \"\"\"\\\nclass UnknownField(object):",
+        "detail": "venv.Scripts.pwiz",
+        "documentation": {}
+    },
+    {
+        "label": "database",
+        "kind": 5,
+        "importPath": "venv.Scripts.pwiz",
+        "description": "venv.Scripts.pwiz",
+        "peekOfCode": "database = %s('%s'%s)\n\"\"\"\nBASE_MODEL = \"\"\"\\\nclass BaseModel(Model):\n    class Meta:\n        database = database\n\"\"\"\nUNKNOWN_FIELD = \"\"\"\\\nclass UnknownField(object):\n    def __init__(self, *_, **__): pass",
+        "detail": "venv.Scripts.pwiz",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_MODEL",
+        "kind": 5,
+        "importPath": "venv.Scripts.pwiz",
+        "description": "venv.Scripts.pwiz",
+        "peekOfCode": "BASE_MODEL = \"\"\"\\\nclass BaseModel(Model):\n    class Meta:\n        database = database\n\"\"\"\nUNKNOWN_FIELD = \"\"\"\\\nclass UnknownField(object):\n    def __init__(self, *_, **__): pass\n\"\"\"\nDATABASE_ALIASES = {",
+        "detail": "venv.Scripts.pwiz",
+        "documentation": {}
+    },
+    {
+        "label": "UNKNOWN_FIELD",
+        "kind": 5,
+        "importPath": "venv.Scripts.pwiz",
+        "description": "venv.Scripts.pwiz",
+        "peekOfCode": "UNKNOWN_FIELD = \"\"\"\\\nclass UnknownField(object):\n    def __init__(self, *_, **__): pass\n\"\"\"\nDATABASE_ALIASES = {\n    CockroachDatabase: ['cockroach', 'cockroachdb', 'crdb'],\n    MySQLDatabase: ['mysql', 'mysqldb'],\n    PostgresqlDatabase: ['postgres', 'postgresql'],\n    SqliteDatabase: ['sqlite', 'sqlite3'],\n}",
+        "detail": "venv.Scripts.pwiz",
+        "documentation": {}
+    },
+    {
+        "label": "DATABASE_ALIASES",
+        "kind": 5,
+        "importPath": "venv.Scripts.pwiz",
+        "description": "venv.Scripts.pwiz",
+        "peekOfCode": "DATABASE_ALIASES = {\n    CockroachDatabase: ['cockroach', 'cockroachdb', 'crdb'],\n    MySQLDatabase: ['mysql', 'mysqldb'],\n    PostgresqlDatabase: ['postgres', 'postgresql'],\n    SqliteDatabase: ['sqlite', 'sqlite3'],\n}\nDATABASE_MAP = dict((value, key)\n                    for key in DATABASE_ALIASES\n                    for value in DATABASE_ALIASES[key])\ndef make_introspector(database_type, database_name, **kwargs):",
+        "detail": "venv.Scripts.pwiz",
+        "documentation": {}
+    },
+    {
+        "label": "DATABASE_MAP",
+        "kind": 5,
+        "importPath": "venv.Scripts.pwiz",
+        "description": "venv.Scripts.pwiz",
+        "peekOfCode": "DATABASE_MAP = dict((value, key)\n                    for key in DATABASE_ALIASES\n                    for value in DATABASE_ALIASES[key])\ndef make_introspector(database_type, database_name, **kwargs):\n    if database_type not in DATABASE_MAP:\n        err('Unrecognized database, must be one of: %s' %\n            ', '.join(DATABASE_MAP.keys()))\n        sys.exit(1)\n    schema = kwargs.pop('schema', None)\n    DatabaseClass = DATABASE_MAP[database_type]",
+        "detail": "venv.Scripts.pwiz",
+        "documentation": {}
+    },
+    {
+        "label": "websearch_agent",
+        "kind": 5,
+        "importPath": "financial_agent",
+        "description": "financial_agent",
+        "peekOfCode": "websearch_agent = Agent(\n    name=\"Websearch Agent\",\n    role=\"Search the web for information\",\n    model=Groq(id=\"llama-3.3-70b-versatile\"),\n    tools=[DuckDuckGo()],\n    instructions=\"Always include sources and references in your answers.\",\n    show_tool_calls=True,\n    markdown=True,\n)\n# Financial Agent",
+        "detail": "financial_agent",
+        "documentation": {}
+    },
+    {
+        "label": "financial_agent",
+        "kind": 5,
+        "importPath": "financial_agent",
+        "description": "financial_agent",
+        "peekOfCode": "financial_agent = Agent(\n    name=\"Financial Agent\",\n    model=Groq(id=\"llama-3.3-70b-versatile\"),\n    tools=[\n        YFinanceTools(\n            stock_price=True,\n            analyst_recommendations=True,\n            stock_fundamentals=True,\n            company_news=True,\n        )",
+        "detail": "financial_agent",
+        "documentation": {}
+    },
+    {
+        "label": "multi_ai_agent",
+        "kind": 5,
+        "importPath": "financial_agent",
+        "description": "financial_agent",
+        "peekOfCode": "multi_ai_agent = Agent(\n    team=[websearch_agent, financial_agent],\n    model=Groq(id=\"llama-3.1-70b-versatile\"),\n    instructions=[\"Always include sources\", \"Use table to display data\"],\n    show_tool_calls=True,\n    markdown=True,\n)\nmulti_ai_agent.print_response(\n    \"Summarize analyst recommendations and share the latest news for NVDA and AMD.\",\n    stream=True,",
+        "detail": "financial_agent",
+        "documentation": {}
+    }
+]
